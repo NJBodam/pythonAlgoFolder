@@ -122,3 +122,54 @@ highest_count = max(win_count_dict.values())
 
 most_win_director = [key for key, value in win_count_dict.items() if value == highest_count]
 
+# Question 3:
+# Quiz: Flying Circus Cast List
+# You're going to create a list of the actors who appeared in the television programme Monty Python's Flying Circus.
+
+# Write a function called create_cast_list that takes a filename as input and returns a list of actors' names. It will be run on the file flying_circus_cast.txt (this information was collected from imdb.com). Each line of that file consists of an actor's name, a comma, and then some (messy) information about roles they played in the programme. You'll need to extract only the name and add it to a list. You might use the .split() method to process each line.
+
+# Solution
+def create_cast_list(filename):
+    cast_list = []
+    #use with to open the file filename
+    #use the for loop syntax to process each line
+    #and add the actor name to cast_list
+    with open("flying_circus_cast.txt") as f:
+        for line in f:
+            cast_list.append(line.strip().split(",")[0])
+    return cast_list
+
+cast_list = create_cast_list('flying_circus_cast.txt')
+for actor in cast_list:
+    print(actor)
+
+# Question 4:
+# Quiz: Password Generator
+# Write a function called generate_password that selects three random words from the list of words word_list and concatenates them into a single string. Your function should not accept any arguments and should reference the global variable word_list to build the password.
+
+#Solution
+# TODO: First import the `random` module
+import random as rd
+
+# We begin with an empty `word_list`
+word_file = "words.txt"
+word_list = []
+
+# We fill up the word_list from the `words.txt` file
+with open(word_file,'r') as words:
+	for line in words:
+		# remove white space and make everything lowercase
+		word = line.strip().lower()
+		# don't include words that are too long or too short
+		if 3 < len(word) < 8:
+			word_list.append(word)
+
+# TODO: Add your function generate_password below
+# It should return a string consisting of three random words 
+# concatenated together without spaces
+
+def generate_password():
+    return "{}{}{}".format(rd.choice(word_list), rd.choice(word_list), rd.choice(word_list))
+
+# Now we test the function
+print(generate_password())
