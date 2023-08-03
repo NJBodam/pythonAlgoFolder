@@ -1,4 +1,4 @@
-import useful_functions as uf
+import g_useful_functions as uf
 
 scores = [88, 92, 79, 93, 85]
 
