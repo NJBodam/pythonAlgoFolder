@@ -5,19 +5,23 @@
 ### "Test Run" button to see the output of your code.
 import csv
 
+enrollmentw = './Data Spreadsheet/enrollments.csv'
 engagement_filename = './Data Spreadsheet/daily_engagement.csv'
 submissions_filename = './Data Spreadsheet/project_submissions.csv'
     
 daily_engagement = []     # Replace this with your code
 project_submissions = []  # Replace this with your code
 
-with open(engagement_filename, 'r') as f:
-    reader = csv.DictReader(f)
-    daily_engagement = list(reader)
+def read_csv(filename):
+    with open(engagement_filename, 'r') as f:
+        reader = csv.DictReader(f)
+        return list(reader)
 
-with open(submissions_filename, 'r') as f:
-    reader = csv.DictReader(f)
-    project_submissions = list(reader)
+daily_engagement = read_csv(engagement_filename)
+project_submissions = read_csv(submissions_filename)
+# with open(submissions_filename, 'r') as f:
+#     reader = csv.DictReader(f)
+#     project_submissions = list(reader)
 
 
 print(daily_engagement[:5])
