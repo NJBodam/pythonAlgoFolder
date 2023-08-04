@@ -10,60 +10,60 @@ if True:
     b = np.array([1, 2, 1, 2])
     
     print(a + b)
-    print a - b
-    print a * b
-    print a / b
-    print a ** b
+    print(a - b)
+    print(a * b)
+    print(a / b)
+    print(a ** b)
     
 # Arithmetic operations between a NumPy array and a single number
 if True:
     a = np.array([1, 2, 3, 4])
     b = 2
     
-    print a + b
-    print a - b
-    print a * b
-    print a / b
-    print a ** b
+    print(a + b)
+    print(a - b)
+    print(a * b)
+    print(a / b)
+    print(a ** b)
     
 # Logical operations with NumPy arrays
 if True:
     a = np.array([True, True, False, False])
     b = np.array([True, False, True, False])
     
-    print a & b
-    print a | b
-    print ~a
+    print(a & b)
+    print(a | b)
+    print(~a)
     
-    print a & True
-    print a & False
+    print(a & True)
+    print(a & False)
     
-    print a | True
-    print a | False
+    print(a | True)
+    print(a | False)
     
 # Comparison operations between 2 NumPy Arrays
 if True:
     a = np.array([1, 2, 3, 4, 5])
     b = np.array([5, 4, 3, 2, 1])
     
-    print a > b
-    print a >= b
-    print a < b
-    print a <= b
-    print a == b
-    print a != b
+    print(a > b)
+    print(a >= b)
+    print(a < b)
+    print(a <= b)
+    print(a == b)
+    print(a != b)
     
 # Comparison operations between a NumPy array and a single number
 if True:
     a = np.array([1, 2, 3, 4])
     b = 2
     
-    print a > b
-    print a >= b
-    print a < b
-    print a <= b
-    print a == b
-    print a != b
+    print(a > b)
+    print(a >= b)
+    print(a < b)
+    print(a <= b)
+    print(a == b)
+    print(a != b)
     
 # First 20 countries with school completion data
 countries = np.array([
@@ -98,5 +98,6 @@ def overall_completion_rate(female_completion, male_completion):
     '''
     
     # print(total_completion)
-    return (female_completion + male_completion)/2
+    # In the solution, we may want to / 2. instead of just / 2. This is because in Python 2, dividing an integer by another integer (2) drops fractions, so if our inputs are also integers, we may end up losing information. If we divide by a float (2.) then we will definitely retain decimal values.
+    return (female_completion + male_completion)/float(2)
 

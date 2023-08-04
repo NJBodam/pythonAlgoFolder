@@ -64,7 +64,10 @@ def max_employment(countries, employment):
     with the highest employment in the given employment
     data, and the employment in that country.
     '''
-    
+    # returns boolean that fufils condition
+    enrolled_1_week = (days_to_cancel > 6)
+    stud_enrolled_week = days_to_cancel[enrolled_1_week]
+    mean_time = time_spent[stud_enrolled_week]
     max_value = employment.max()   # Replace this with your code
     index = np.where(employment == max_value)[0]
     max_country = countries[index][0]
