@@ -14,7 +14,7 @@ if True:
     print a.sum(axis=0) # sum of each column
     print a.sum(axis=1) # sum of each row
 
-    # reurns  45 [12 15 18] [ 6 15 24]
+    # returns  45 [12 15 18] [ 6 15 24]
     
 # Subway ridership for 5 stations on 10 different days
 ridership = np.array([
