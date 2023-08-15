@@ -1,5 +1,6 @@
 import pandas as pd
 
+# FIRST USE CASE
 grades_df = pd.DataFrame(
     data={'exam1': [43, 81, 78, 75, 89, 70, 91, 65, 98, 87],
           'exam2': [24, 63, 56, 56, 67, 51, 79, 46, 72, 60]},
@@ -55,4 +56,43 @@ def standardize(df):
     # apply() does not change the original DataFrame unless you set the inplace parameter to True    
     return df.apply(standardize_column, axis=0)
     
-    
+
+# SECOND USE CASE
+df = pd.DataFrame({
+    'a': [4, 5, 3, 1, 2],
+    'b': [20, 10, 40, 50, 30],
+    'c': [25, 20, 5, 15, 10]
+})
+
+# Change False to True for this block of code to see what it does
+
+# DataFrame apply() - use case 2
+if True:   
+    print df.apply(np.mean)
+    print df.apply(np.max)
+
+# Output:
+# a     3.0 # mean of column a
+# b    30.0 # mean of column b
+# c    15.0 # mean of column c
+# dtype: float64
+# a     5 # max of column a
+# b    50 # max of column b
+# c    25 # max of column c
+# dtype: int64
+
+def second_largest(df):
+    '''
+    Fill in this function to return the second-largest value of each 
+    column of the input DataFrame.
+    '''
+    # My solution
+    new_df = df[df < df.apply(np.max)]
+    print(new_df.apply(np.max))
+
+    # Alternative solution
+    sorted_series = df.sort_values(ascending=False)
+    return sorted_series.iloc[1]
+
+# Apply the custom function to each column using apply()
+second_largest_values = df.apply(second_largest)
