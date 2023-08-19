@@ -90,8 +90,13 @@ subway_df = pd.read_csv(filename)
 
 
 if True:
-    grouped_data = subway_df[:10].groupby('hour')
+    grouped_data = subway_df[:10]
+    gdt1 = subway_df[:865].groupby('station')
+    gdt2 = subway_df.groupby('conds')
+    print(grouped_data.groupby('hour').sum()['ENTRIESn_hourly'])
+    print(gdt2.sum()['EXITSn_hourly'])
+    rs = subway_df.groupby('hour').sum()['ENTRIESn_hourly']
     
-    gdt = subway_df[:10].groupby('day_week')
-#     print(grouped_data.groups)
-    print(gdt.sum())
+#     plt.plot(subway_df.groupby('day_week').sum()['ENTRIESn_hourly'])
+#     plt.plot(rs)
+    plt.plot(gdt2.sum()['ENTRIESn_hourly'], linewidth=2, markersize=40)

@@ -49,3 +49,27 @@ def get_hourly_entries_and_exits(entries_and_exits):
     return entries_and_exits
 
 print(get_hourly_entries_and_exits(entries_and_exits))
+
+# Output:
+#    ENTRIESn  EXITSn
+# 0       NaN     NaN
+# 1      23.0     8.0
+# 2      18.0    18.0
+# 3      71.0    54.0
+# 4     170.0    44.0
+# 5     214.0    42.0
+# 6      87.0    11.0
+# 7      10.0     3.0
+# 8      36.0    89.0
+# 9     153.0   333.0
+#     ENTRIESn  EXITSn
+# 0        0.0     0.0
+# 1       23.0     8.0
+# 2       18.0    18.0
+# 3       71.0    54.0
+# 4      170.0    44.0
+# 5      214.0    42.0
+# 6       87.0    11.0
+# 7       10.0     3.0
+# 8       36.0    89.0
+# 9      153.0   333.0
