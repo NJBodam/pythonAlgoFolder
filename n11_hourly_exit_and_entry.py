@@ -68,10 +68,10 @@ def get_hourly_entries_and_exits(entries_and_exits):
     # The thought process:
     # 1. Group by 'UNIT'
     # 2. For each group, get the hourly entries and exits
-    
+
 
     # My solution
-    # This  23, 14, 18, 71, 170
+
     def diff(x):
         return x.diff()
     # OR
