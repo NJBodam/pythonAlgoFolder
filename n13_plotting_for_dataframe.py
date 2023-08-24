@@ -61,6 +61,8 @@ plt.figure()
 data_by_location = subway_df.groupby(['latitude', 'longitude'], as_index=False).mean()
 scaled_entries = data_by_location['ENTRIESn_hourly'] / data_by_location['ENTRIESn_hourly'].std()
 plt.scatter(data_by_location['latitude'], data_by_location['longitude'], s=scaled_entries)
+# To convert the x axis to log values, you can use
+#   plt.xscale('log')
 plt.xlabel('Latitude')
 plt.ylabel('Longitude')
 plt.show()
@@ -70,6 +72,10 @@ data_by_weekday = subway_df.groupby('day_week').mean()['ENTRIESn_hourly']
 plt.plot(data_by_weekday)
 plt.xlabel('Day of the week')
 plt.ylabel('Average ridership')
+# We can also add the yticks function to put the y axis in perspective, make it start from zero
+plt.yticks([0, 10000, 20000, 30000, 40000, 50000, 60000, 70000])
+# We can also change the label displayed on the Y axis using same yticks function
+plt.yticks([0, 10000, 20000, 30000, 40000, 50000, 60000, 70000], ['0', '10k', '20k', '30k', '40k', '50k', '60k', '70k'])
 plt.show()
 
 plt.figure()
@@ -94,4 +100,3 @@ plt.ylabel('Average ridership')
 plt.show()
 
 plt.figure()
-d
