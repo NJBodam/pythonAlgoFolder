@@ -570,3 +570,13 @@ plt.show()
 #  [44 48 69 99 61]
 #  [45 47 70 98 60]
 #  [46 48 71 99 61]]
+
+# Summary Statistics
+
+# dataset.isnull().sum()
+# dataset.head(5)
+# dataset.info()
+
+# Conversion
+# dataset['sex'] = dataset['sex'].map({"Male": 0, "Female":1})
+# dataset['marital.status'] = dataset['marital.status'].replace(['Never-married', 'Divorced', 'Seperated', 'Widowed'], 0)
