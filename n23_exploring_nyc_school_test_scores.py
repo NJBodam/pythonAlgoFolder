@@ -29,8 +29,6 @@ pass_mark = 640
 #     y = np.std(x)
 #     return round(y, 2)
 
-
-
 best_math_schools = schools[schools["average_math"] >= pass_mark][["school_name", "average_math"]].sort_values("average_math", ascending=False)
 
 # best_math_schools = schools.sort_values("average_math", ascending=False).loc[schools.average_math >= pass_mark, ["school_name", "average_math"]]
@@ -39,8 +37,6 @@ best_math_schools = schools[schools["average_math"] >= pass_mark][["school_name"
 schools["total_SAT"] = schools["average_math"] + schools["average_reading"] + schools["average_writing"]
 
 # schools["total_SAT"] = schools[["average_math","average_reading","average_writing"]].sum(axis=1)
-
-
 
 # top_10_schools = schools[["school_name","total_SAT"]].sort_values("total_SAT", ascending=False).head(10)
 

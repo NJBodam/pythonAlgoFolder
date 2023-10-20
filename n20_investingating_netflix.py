@@ -25,6 +25,7 @@ short_movies = netflix_movies[netflix_movies['duration'] < 60]
 # print(short_movies.country.value_counts().sort_values(ascending=False).head())
 # print(short_movies.release_year.value_counts().sort_values(ascending=False).head())
 
+
 colors = []
 
 for i in netflix_movies['genre']:
