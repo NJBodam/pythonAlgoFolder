@@ -137,8 +137,12 @@ def fibonacci_seq(n):
             n = n -1
         return f1
 
-
-
+# Recursive form
+def fib(n):
+    if n < 2: return(n)
+    else: return fib(n-2) + fib(n-1)
+    
+print(fib(8))
 
 # Exercise 3
 
