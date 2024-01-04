@@ -118,10 +118,10 @@ print(duplicated_rows)
 
 
 
-You can print all the columns in a Pandas DataFrame that are of numerical data type (integers or floating-point numbers) by selecting those columns and then printing their names. Here's how you can do it:
+# You can print all the columns in a Pandas DataFrame that are of numerical data type (integers or floating-point numbers) by selecting those columns and then printing their names. Here's how you can do it:
 
-python
-Copy code
+#python
+#Copy code
 import pandas as pd
 
 # Create a sample DataFrame
